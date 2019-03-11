@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ICCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BookMachine">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="MachineId" Type="Guid" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FinishTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="InsAt" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="InsBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UpdAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Machine" Relationship="Self.FK_BookMachine_Machine" FromRole="BookMachine" ToRole="Machine" />
+    <NavigationProperty Name="UserAcount" Relationship="Self.FK_BookMachine_UserAcount" FromRole="BookMachine" ToRole="UserAcount" />
+  </EntityType>
+  <EntityType Name="BuyFacility">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="FacilityId" Type="Guid" Nullable="false" />
+    <Property Name="ItemId" Type="Guid" Nullable="false" />
+    <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Note" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="InsAt" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="InsBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UpdAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Facility" Relationship="Self.FK_BuyFacility_Facility" FromRole="BuyFacility" ToRole="Facility" />
+    <NavigationProperty Name="Item" Relationship="Self.FK_BuyFacility_Item" FromRole="BuyFacility" ToRole="Item" />
+  </EntityType>
+  <EntityType Name="Facility">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CooperationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="InsAt" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="InsBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UpdAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="BuyFacilities" Relationship="Self.FK_BuyFacility_Facility" FromRole="Facility" ToRole="BuyFacility" />
+  </EntityType>
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="DateExpired" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="InsAt" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="InsBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UpdAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="BuyFacilities" Relationship="Self.FK_BuyFacility_Item" FromRole="Item" ToRole="BuyFacility" />
+    <NavigationProperty Name="OrderItems" Relationship="Self.FK_OrderItem_Item" FromRole="Item" ToRole="OrderItem" />
+  </EntityType>
+  <EntityType Name="Machine">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="InsAt" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="InsBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UpdAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="BookMachines" Relationship="Self.FK_BookMachine_Machine" FromRole="Machine" ToRole="BookMachine" />
+  </EntityType>
+  <EntityType Name="Membership">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="Point" Type="Int32" Nullable="false" />
+    <Property Name="JoinedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Note" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="InsAt" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="InsBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UpdAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="UserAcount" Relationship="Self.FK_Membership_UserAcount" FromRole="Membership" ToRole="UserAcount" />
+  </EntityType>
+  <EntityType Name="OrderItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="ItemId" Type="Guid" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="InsAt" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="InsBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UpdAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Item" Relationship="Self.FK_OrderItem_Item" FromRole="OrderItem" ToRole="Item" />
+    <NavigationProperty Name="UserAcount" Relationship="Self.FK_OrderItem_UserAcount" FromRole="OrderItem" ToRole="UserAcount" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="InsAt" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="InsBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UpdAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="UserRoles" Relationship="Self.FK_UserRole_Role" FromRole="Role" ToRole="UserRole" />
+  </EntityType>
+  <EntityType Name="UserAcount">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="InsAt" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="InsBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UpdAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="BookMachines" Relationship="Self.FK_BookMachine_UserAcount" FromRole="UserAcount" ToRole="BookMachine" />
+    <NavigationProperty Name="Memberships" Relationship="Self.FK_Membership_UserAcount" FromRole="UserAcount" ToRole="Membership" />
+    <NavigationProperty Name="OrderItems" Relationship="Self.FK_OrderItem_UserAcount" FromRole="UserAcount" ToRole="OrderItem" />
+    <NavigationProperty Name="UserRoles" Relationship="Self.FK_UserRole_UserAcount" FromRole="UserAcount" ToRole="UserRole" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="RoleId" Type="Guid" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="InsAt" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="InsBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UpdAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Role" Relationship="Self.FK_UserRole_Role" FromRole="UserRole" ToRole="Role" />
+    <NavigationProperty Name="UserAcount" Relationship="Self.FK_UserRole_UserAcount" FromRole="UserRole" ToRole="UserAcount" />
+  </EntityType>
+  <Association Name="FK_BookMachine_Machine">
+    <End Role="Machine" Type="Self.Machine" Multiplicity="1" />
+    <End Role="BookMachine" Type="Self.BookMachine" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Machine">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BookMachine">
+        <PropertyRef Name="MachineId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BookMachine_UserAcount">
+    <End Role="UserAcount" Type="Self.UserAcount" Multiplicity="1" />
+    <End Role="BookMachine" Type="Self.BookMachine" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAcount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BookMachine">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BuyFacility_Facility">
+    <End Role="Facility" Type="Self.Facility" Multiplicity="1" />
+    <End Role="BuyFacility" Type="Self.BuyFacility" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Facility">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BuyFacility">
+        <PropertyRef Name="FacilityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BuyFacility_Item">
+    <End Role="Item" Type="Self.Item" Multiplicity="1" />
+    <End Role="BuyFacility" Type="Self.BuyFacility" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BuyFacility">
+        <PropertyRef Name="ItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderItem_Item">
+    <End Role="Item" Type="Self.Item" Multiplicity="1" />
+    <End Role="OrderItem" Type="Self.OrderItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderItem">
+        <PropertyRef Name="ItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Membership_UserAcount">
+    <End Role="UserAcount" Type="Self.UserAcount" Multiplicity="1" />
+    <End Role="Membership" Type="Self.Membership" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAcount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Membership">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderItem_UserAcount">
+    <End Role="UserAcount" Type="Self.UserAcount" Multiplicity="1" />
+    <End Role="OrderItem" Type="Self.OrderItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAcount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderItem">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRole_Role">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRole_UserAcount">
+    <End Role="UserAcount" Type="Self.UserAcount" Multiplicity="1" />
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAcount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ICCEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BookMachines" EntityType="Self.BookMachine" />
+    <EntitySet Name="BuyFacilities" EntityType="Self.BuyFacility" />
+    <EntitySet Name="Facilities" EntityType="Self.Facility" />
+    <EntitySet Name="Items" EntityType="Self.Item" />
+    <EntitySet Name="Machines" EntityType="Self.Machine" />
+    <EntitySet Name="Memberships" EntityType="Self.Membership" />
+    <EntitySet Name="OrderItems" EntityType="Self.OrderItem" />
+    <EntitySet Name="Roles" EntityType="Self.Role" />
+    <EntitySet Name="UserAcounts" EntityType="Self.UserAcount" />
+    <EntitySet Name="UserRoles" EntityType="Self.UserRole" />
+    <AssociationSet Name="FK_BookMachine_Machine" Association="Self.FK_BookMachine_Machine">
+      <End Role="Machine" EntitySet="Machines" />
+      <End Role="BookMachine" EntitySet="BookMachines" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BookMachine_UserAcount" Association="Self.FK_BookMachine_UserAcount">
+      <End Role="UserAcount" EntitySet="UserAcounts" />
+      <End Role="BookMachine" EntitySet="BookMachines" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BuyFacility_Facility" Association="Self.FK_BuyFacility_Facility">
+      <End Role="Facility" EntitySet="Facilities" />
+      <End Role="BuyFacility" EntitySet="BuyFacilities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BuyFacility_Item" Association="Self.FK_BuyFacility_Item">
+      <End Role="Item" EntitySet="Items" />
+      <End Role="BuyFacility" EntitySet="BuyFacilities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderItem_Item" Association="Self.FK_OrderItem_Item">
+      <End Role="Item" EntitySet="Items" />
+      <End Role="OrderItem" EntitySet="OrderItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Membership_UserAcount" Association="Self.FK_Membership_UserAcount">
+      <End Role="UserAcount" EntitySet="UserAcounts" />
+      <End Role="Membership" EntitySet="Memberships" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderItem_UserAcount" Association="Self.FK_OrderItem_UserAcount">
+      <End Role="UserAcount" EntitySet="UserAcounts" />
+      <End Role="OrderItem" EntitySet="OrderItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRole_Role" Association="Self.FK_UserRole_Role">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="UserRole" EntitySet="UserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRole_UserAcount" Association="Self.FK_UserRole_UserAcount">
+      <End Role="UserAcount" EntitySet="UserAcounts" />
+      <End Role="UserRole" EntitySet="UserRoles" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

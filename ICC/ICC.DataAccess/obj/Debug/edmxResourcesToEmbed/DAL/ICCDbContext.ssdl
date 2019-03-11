@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ICCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BookMachine">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="MachineId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="StartTime" Type="datetime" Nullable="false" />
+    <Property Name="FinishTime" Type="datetime" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="InsAt" Type="date" Nullable="false" />
+    <Property Name="InsBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpdAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BuyFacility">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FacilityId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ItemId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="Price" Type="money" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Note" Type="nvarchar" MaxLength="200" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="InsAt" Type="date" Nullable="false" />
+    <Property Name="InsBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpdAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Facility">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CooperationDate" Type="datetime" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="InsAt" Type="date" Nullable="false" />
+    <Property Name="InsBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpdAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Amount" Type="money" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="DateExpired" Type="datetime" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="InsAt" Type="date" Nullable="false" />
+    <Property Name="InsBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpdAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Machine">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="InsAt" Type="date" Nullable="false" />
+    <Property Name="InsBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpdAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Membership">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Point" Type="int" Nullable="false" />
+    <Property Name="JoinedDate" Type="datetime" Nullable="false" />
+    <Property Name="Note" Type="nvarchar" MaxLength="200" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="InsAt" Type="date" Nullable="false" />
+    <Property Name="InsBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpdAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ItemId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Price" Type="money" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="InsAt" Type="date" Nullable="false" />
+    <Property Name="InsBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpdAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="InsAt" Type="date" Nullable="false" />
+    <Property Name="InsBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpdAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserAcount">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DateOfBirth" Type="datetime" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="InsAt" Type="date" Nullable="false" />
+    <Property Name="InsBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpdAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="InsAt" Type="date" Nullable="false" />
+    <Property Name="InsBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpdAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_BookMachine_Machine">
+    <End Role="Machine" Type="Self.Machine" Multiplicity="1" />
+    <End Role="BookMachine" Type="Self.BookMachine" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Machine">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BookMachine">
+        <PropertyRef Name="MachineId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BookMachine_UserAcount">
+    <End Role="UserAcount" Type="Self.UserAcount" Multiplicity="1" />
+    <End Role="BookMachine" Type="Self.BookMachine" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAcount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BookMachine">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BuyFacility_Facility">
+    <End Role="Facility" Type="Self.Facility" Multiplicity="1" />
+    <End Role="BuyFacility" Type="Self.BuyFacility" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Facility">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BuyFacility">
+        <PropertyRef Name="FacilityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BuyFacility_Item">
+    <End Role="Item" Type="Self.Item" Multiplicity="1" />
+    <End Role="BuyFacility" Type="Self.BuyFacility" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BuyFacility">
+        <PropertyRef Name="ItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Membership_UserAcount">
+    <End Role="UserAcount" Type="Self.UserAcount" Multiplicity="1" />
+    <End Role="Membership" Type="Self.Membership" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAcount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Membership">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderItem_Item">
+    <End Role="Item" Type="Self.Item" Multiplicity="1" />
+    <End Role="OrderItem" Type="Self.OrderItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderItem">
+        <PropertyRef Name="ItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderItem_UserAcount">
+    <End Role="UserAcount" Type="Self.UserAcount" Multiplicity="1" />
+    <End Role="OrderItem" Type="Self.OrderItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAcount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderItem">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRole_Role">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRole_UserAcount">
+    <End Role="UserAcount" Type="Self.UserAcount" Multiplicity="1" />
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAcount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ICCModelStoreContainer">
+    <EntitySet Name="BookMachine" EntityType="Self.BookMachine" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BuyFacility" EntityType="Self.BuyFacility" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Facility" EntityType="Self.Facility" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Machine" EntityType="Self.Machine" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Membership" EntityType="Self.Membership" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderItem" EntityType="Self.OrderItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserAcount" EntityType="Self.UserAcount" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_BookMachine_Machine" Association="Self.FK_BookMachine_Machine">
+      <End Role="Machine" EntitySet="Machine" />
+      <End Role="BookMachine" EntitySet="BookMachine" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BookMachine_UserAcount" Association="Self.FK_BookMachine_UserAcount">
+      <End Role="UserAcount" EntitySet="UserAcount" />
+      <End Role="BookMachine" EntitySet="BookMachine" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BuyFacility_Facility" Association="Self.FK_BuyFacility_Facility">
+      <End Role="Facility" EntitySet="Facility" />
+      <End Role="BuyFacility" EntitySet="BuyFacility" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BuyFacility_Item" Association="Self.FK_BuyFacility_Item">
+      <End Role="Item" EntitySet="Item" />
+      <End Role="BuyFacility" EntitySet="BuyFacility" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Membership_UserAcount" Association="Self.FK_Membership_UserAcount">
+      <End Role="UserAcount" EntitySet="UserAcount" />
+      <End Role="Membership" EntitySet="Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderItem_Item" Association="Self.FK_OrderItem_Item">
+      <End Role="Item" EntitySet="Item" />
+      <End Role="OrderItem" EntitySet="OrderItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderItem_UserAcount" Association="Self.FK_OrderItem_UserAcount">
+      <End Role="UserAcount" EntitySet="UserAcount" />
+      <End Role="OrderItem" EntitySet="OrderItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRole_Role" Association="Self.FK_UserRole_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="UserRole" EntitySet="UserRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRole_UserAcount" Association="Self.FK_UserRole_UserAcount">
+      <End Role="UserAcount" EntitySet="UserAcount" />
+      <End Role="UserRole" EntitySet="UserRole" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

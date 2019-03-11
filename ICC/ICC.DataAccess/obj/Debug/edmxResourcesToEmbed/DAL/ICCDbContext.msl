@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ICCModelStoreContainer" CdmEntityContainer="ICCEntities">
+    <EntitySetMapping Name="BookMachines">
+      <EntityTypeMapping TypeName="ICCModel.BookMachine">
+        <MappingFragment StoreEntitySet="BookMachine">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MachineId" ColumnName="MachineId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="FinishTime" ColumnName="FinishTime" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="InsAt" ColumnName="InsAt" />
+          <ScalarProperty Name="InsBy" ColumnName="InsBy" />
+          <ScalarProperty Name="UpdAt" ColumnName="UpdAt" />
+          <ScalarProperty Name="UpdBy" ColumnName="UpdBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BuyFacilities">
+      <EntityTypeMapping TypeName="ICCModel.BuyFacility">
+        <MappingFragment StoreEntitySet="BuyFacility">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FacilityId" ColumnName="FacilityId" />
+          <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="InsAt" ColumnName="InsAt" />
+          <ScalarProperty Name="InsBy" ColumnName="InsBy" />
+          <ScalarProperty Name="UpdAt" ColumnName="UpdAt" />
+          <ScalarProperty Name="UpdBy" ColumnName="UpdBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Facilities">
+      <EntityTypeMapping TypeName="ICCModel.Facility">
+        <MappingFragment StoreEntitySet="Facility">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CooperationDate" ColumnName="CooperationDate" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="InsAt" ColumnName="InsAt" />
+          <ScalarProperty Name="InsBy" ColumnName="InsBy" />
+          <ScalarProperty Name="UpdAt" ColumnName="UpdAt" />
+          <ScalarProperty Name="UpdBy" ColumnName="UpdBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Items">
+      <EntityTypeMapping TypeName="ICCModel.Item">
+        <MappingFragment StoreEntitySet="Item">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="DateExpired" ColumnName="DateExpired" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="InsAt" ColumnName="InsAt" />
+          <ScalarProperty Name="InsBy" ColumnName="InsBy" />
+          <ScalarProperty Name="UpdAt" ColumnName="UpdAt" />
+          <ScalarProperty Name="UpdBy" ColumnName="UpdBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Machines">
+      <EntityTypeMapping TypeName="ICCModel.Machine">
+        <MappingFragment StoreEntitySet="Machine">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="InsAt" ColumnName="InsAt" />
+          <ScalarProperty Name="InsBy" ColumnName="InsBy" />
+          <ScalarProperty Name="UpdAt" ColumnName="UpdAt" />
+          <ScalarProperty Name="UpdBy" ColumnName="UpdBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Memberships">
+      <EntityTypeMapping TypeName="ICCModel.Membership">
+        <MappingFragment StoreEntitySet="Membership">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Point" ColumnName="Point" />
+          <ScalarProperty Name="JoinedDate" ColumnName="JoinedDate" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="InsAt" ColumnName="InsAt" />
+          <ScalarProperty Name="InsBy" ColumnName="InsBy" />
+          <ScalarProperty Name="UpdAt" ColumnName="UpdAt" />
+          <ScalarProperty Name="UpdBy" ColumnName="UpdBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderItems">
+      <EntityTypeMapping TypeName="ICCModel.OrderItem">
+        <MappingFragment StoreEntitySet="OrderItem">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="InsAt" ColumnName="InsAt" />
+          <ScalarProperty Name="InsBy" ColumnName="InsBy" />
+          <ScalarProperty Name="UpdAt" ColumnName="UpdAt" />
+          <ScalarProperty Name="UpdBy" ColumnName="UpdBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="ICCModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="InsAt" ColumnName="InsAt" />
+          <ScalarProperty Name="InsBy" ColumnName="InsBy" />
+          <ScalarProperty Name="UpdAt" ColumnName="UpdAt" />
+          <ScalarProperty Name="UpdBy" ColumnName="UpdBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserAcounts">
+      <EntityTypeMapping TypeName="ICCModel.UserAcount">
+        <MappingFragment StoreEntitySet="UserAcount">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="InsAt" ColumnName="InsAt" />
+          <ScalarProperty Name="InsBy" ColumnName="InsBy" />
+          <ScalarProperty Name="UpdAt" ColumnName="UpdAt" />
+          <ScalarProperty Name="UpdBy" ColumnName="UpdBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRoles">
+      <EntityTypeMapping TypeName="ICCModel.UserRole">
+        <MappingFragment StoreEntitySet="UserRole">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="InsAt" ColumnName="InsAt" />
+          <ScalarProperty Name="InsBy" ColumnName="InsBy" />
+          <ScalarProperty Name="UpdAt" ColumnName="UpdAt" />
+          <ScalarProperty Name="UpdBy" ColumnName="UpdBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
