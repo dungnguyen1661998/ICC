@@ -204,6 +204,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Implements\BookMachineRepository.cs" />
+    <Compile Include="Implements\BuyFacilityRepository.cs" />
+    <Compile Include="Implements\FacilityRepository.cs" />
+    <Compile Include="Implements\ItemRepository.cs" />
+    <Compile Include="Implements\MachineRepository.cs" />
+    <Compile Include="Implements\MembershipRepository.cs" />
+    <Compile Include="Implements\OrderItemRepository.cs" />
+    <Compile Include="Implements\RoleRepository.cs" />
+    <Compile Include="Implements\UserAcountRepository.cs" />
+    <Compile Include="Implements\UserRoleRepository.cs" />
     <Compile Include="Interfaces\IBookMachineRepository.cs" />
     <Compile Include="Interfaces\IBuyFacilityRepository.cs" />
     <Compile Include="Interfaces\IFacilityRepository.cs" />
@@ -211,9 +221,11 @@
     <Compile Include="Interfaces\IMachineRepository.cs" />
     <Compile Include="Interfaces\IMembershipRepository.cs" />
     <Compile Include="Interfaces\IOrderItemRepository.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IRoleRepository.cs" />
     <Compile Include="Interfaces\IUserAcountRepository.cs" />
     <Compile Include="Interfaces\IUserRoleRepository.cs" />
+    <Compile Include="Interfaces\Repository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

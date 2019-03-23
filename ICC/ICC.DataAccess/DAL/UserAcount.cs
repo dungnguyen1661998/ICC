@@ -14,6 +14,8 @@ namespace ICC.DataAccess.DAL
     
     public partial class UserAcount
     {
+        private ICCEntities _context;
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public UserAcount()
         {
@@ -22,7 +24,12 @@ namespace ICC.DataAccess.DAL
             this.OrderItems = new HashSet<OrderItem>();
             this.UserRoles = new HashSet<UserRole>();
         }
-    
+
+        public UserAcount(ICCEntities context)
+        {
+            _context = context;
+        }
+
         public System.Guid Id { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
